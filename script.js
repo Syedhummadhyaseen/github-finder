@@ -19,7 +19,7 @@ async function getUser(username) {
 
     const data = await response.json();
 
-    result.innerHTML = `
+        const profileHTML = `
         <img src="${data.avatar_url}" alt="${data.login}" width="120">
         <h2>${data.name || data.login}</h2>
         <p>${data.bio || "No bio available"}</p>
@@ -39,8 +39,8 @@ async function getUser(username) {
             </p>
         `;
     });
-
-    result.innerHTML += reposHTML;
+    
+        result.innerHTML = profileHTML + reposHTML;
 }
 
 searchBtn.addEventListener("click", function () {
